@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   background-color: rgb(79, 210, 210);
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Poppins";
   font-size: large;
 }
 
@@ -14,7 +14,8 @@
 }
 
 .display {
-  margin-top: 200px;
+  font-size: 70px;
+  margin-top: 50px;
   padding: 40px;
   display: flex;
   justify-content: center;

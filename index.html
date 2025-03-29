@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Odin Project - Calculator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="display" class="display">0</div>
+    <div id="container" class="container">
+      <button id="display" class="display">0</button>
       <div class="first-row">
-        <div id="clear" class="calculator">Clear</div>
-        <div id="plus-minus" class="calculator">+/-</div>
-        <div id="modulus" class="calculator">%</div>
-        <div id="divide" class="calculator">/</div>
+        <button id="clear" class="calculator">Clear</button>
+        <button id="plus-minus" class="calculator">+/-</button>
+        <button id="modulus" class="calculator">%</button>
+        <button id="divide" class="calculator">/</button>
       </div>
       <div class="second-row">
-        <div id="num7" class="calculator">7</div>
-        <div id="num8" class="calculator">8</div>
-        <div id="num9" class="calculator">9</div>
-        <div id="multiply" class="calculator">*</div>
+        <button id="num7" class="calculator">7</button>
+        <button id="num8" class="calculator">8</button>
+        <button id="num9" class="calculator">9</button>
+        <button id="multiply" class="calculator">*</button>
       </div>
       <div class="third-row">
-        <div id="num4" class="calculator">4</div>
-        <div id="num5" class="calculator">5</div>
-        <div id="num6" class="calculator">6</div>
-        <div id="substract" class="calculator">-</div>
+        <button id="num4" class="calculator">4</button>
+        <button id="num5" class="calculator">5</button>
+        <button id="num6" class="calculator">6</button>
+        <button id="substract" class="calculator">-</button>
       </div>
 
       <div class="fourth-row">
-        <div id="num1" class="calculator">1</div>
-        <div id="num2" class="calculator">2</div>
-        <div id="num3" class="calculator">3</div>
-        <div id="add" class="calculator">+</div>
+        <button id="num1" class="calculator">1</button>
+        <button id="num2" class="calculator">2</button>
+        <button id="num3" class="calculator">3</button>
+        <button id="add" class="calculator">+</button>
       </div>
 
       <div class="fifth-row">
-        <div id="num0" class="calculator">0</div>
-        <div id="decimal" class="calculator">.</div>
-        <div id="equal" class="calculator">=</div>
+        <button id="num0" class="calculator">0</button>
+        <button id="decimal" class="calculator">.</button>
+        <button id="equal" class="calculator">=</button>
       </div>
     </div>
     <script src="dom.js"></script>

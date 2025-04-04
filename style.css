@@ -42,9 +42,16 @@ button {
 .special {
   background-color: rgb(219, 206, 146);
 }
+.special:hover {
+  background-color: rgb(158, 2, 255);
+}
 
 .operator {
   background-color: rgb(191, 236, 236);
+}
+
+.operator:hover {
+  background-color: rgb(190, 35, 141);
 }
 .number {
   background-color: rgb(215, 139, 139);

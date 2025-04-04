@@ -17,14 +17,19 @@ let reset = false;
 btn.forEach((button) => {
   button.addEventListener("click", () => {
     const buttonText = button.textContent;
-    if (["Clear"].includes(buttonText)) {
-      display.textContent = 0;
+
+    if (buttonText === "Clear") {
+      number1 = "";
+      number2 = "";
+      operator = undefined;
+      display.textContent = "";
+      return;
     }
 
     if (["+", "-", "*", "/"].includes(buttonText)) {
       number1 = parseFloat(display.textContent);
       operator = buttonText;
-      display.textContent = ""; // Limpar para o próximo número
+      display.textContent = "";
     } else if (buttonText === "=") {
       number2 = parseFloat(display.textContent);
       operate(number1, operator, number2);
@@ -37,13 +42,17 @@ btn.forEach((button) => {
 
 function operate(number1, operator, number2) {
   if (operator === "+") {
-    display.textContent = addiction(number1, number2);
+    number1 = addiction(number1, number2);
+    display.textContent = number1;
   } else if (operator === "-") {
-    display.textContent = subtraction(number1, number2);
+    number1 = subtraction(number1, number2);
+    display.textContent = number1;
   } else if (operator === "*") {
-    display.textContent = multiplication(number1, number2);
+    number1 = multiplication(number1, number2);
+    display.textContent = number1;
   } else if (operator === "/") {
-    display.textContent = division(number1, number2);
+    number1 = division(number1, number2);
+    display.textContent = number1;
   }
 }
 

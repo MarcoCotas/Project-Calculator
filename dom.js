@@ -17,6 +17,10 @@ let reset = false;
 btn.forEach((button) => {
   button.addEventListener("click", () => {
     const buttonText = button.textContent;
+    if (buttonText === "+/-") {
+      display.textContent = (parseFloat(display.textContent) * -1).toString();
+      return;
+    }
 
     if (buttonText === "Clear") {
       number1 = "";
@@ -25,8 +29,11 @@ btn.forEach((button) => {
       display.textContent = "";
       return;
     }
+    if (buttonText === "=" && (number1 === "" || operator === undefined)) {
+      alert("Insert valid equation");
+    }
 
-    if (["+", "-", "*", "/"].includes(buttonText)) {
+    if (["+", "-", "*", "/", "%"].includes(buttonText)) {
       number1 = parseFloat(display.textContent);
       operator = buttonText;
       display.textContent = "";
@@ -34,6 +41,8 @@ btn.forEach((button) => {
       number2 = parseFloat(display.textContent);
       operate(number1, operator, number2);
       number1 = parseFloat(display.textContent);
+      number2 = "";
+      operator = undefined;
     } else {
       display.textContent += buttonText;
     }
@@ -42,7 +51,7 @@ btn.forEach((button) => {
 
 function operate(number1, operator, number2) {
   if (operator === "+") {
-    number1 = addiction(number1, number2);
+    number1 = addition(number1, number2);
     display.textContent = number1;
   } else if (operator === "-") {
     number1 = subtraction(number1, number2);
@@ -53,19 +62,30 @@ function operate(number1, operator, number2) {
   } else if (operator === "/") {
     number1 = division(number1, number2);
     display.textContent = number1;
+  } else if (operator === "%") {
+    number1 = modulo(number1, number2);
+    display.textContent = number1;
   }
 }
 
-function addiction(number1, number2) {
-  return number1 + number2;
+function addition(number1, number2) {
+  return Math.round((number1 + number2) * 100) / 100;
 }
 function subtraction(number1, number2) {
-  return number1 - number2;
+  return Math.round((number1 - number2) * 100) / 100;
 }
 
 function multiplication(number1, number2) {
-  return number1 * number2;
+  return Math.round(number1 * number2 * 100) / 100;
 }
 function division(number1, number2) {
-  return number1 / number2;
+  if (number2 === 0) {
+    alert("Not possible to divide by 0");
+    return 0;
+  }
+  return Math.round((number1 / number2) * 100) / 100;
+}
+
+function modulo(number1, number2) {
+  return Math.round((number1 % number2) * 100) / 100;
 }
